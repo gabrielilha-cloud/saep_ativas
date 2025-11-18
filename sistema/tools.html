@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2f;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ffcc00;
+            color: #1e1e2f;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin: 1rem auto;
+            max-width: 800px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #2a2a3d;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .tool-section {
+            margin-bottom: 2rem;
+        }
+        .tool-section h2 {
+            color: #ffcc00;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ffcc00;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .tool-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .tool-section input, .tool-section button {
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #ffcc00;
+            border-radius: 5px;
+            background-color: #1e1e2f;
+            color: #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        .tool-section input:focus {
+            outline: none;
+            border-color: #ffcc00;
+            box-shadow: 0 0 5px #ffcc00;
+        }
+        .tool-section button {
+            background-color: #ffcc00;
+            color: #1e1e2f;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .tool-section button:hover {
+            background-color: #e6b800;
+            color: #1e1e2f;
+        }
+        .tool-section button:active {
+            background-color: #cc9900;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ferramentas</h1>
+    </header>
+    <div class="container">
+        <div class="tool-section">
+            <h2>Pesquisar Ferramentas</h2>
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Digite o nome da ferramenta" required>
+                <button type="submit">Pesquisar</button>
+            </form>
+        </div>
+        <div class="tool-section">
+            <h2>Cadastrar Nova Ferramenta</h2>
+            <form id="registerForm">
+                <input type="text" id="toolName" placeholder="Nome da ferramenta" required>
+                <input type="text" id="toolDescription" placeholder="Descrição da ferramenta" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const searchValue = document.getElementById('searchInput').value;
+            alert('Pesquisando por: ' + searchValue);
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const toolName = document.getElementById('toolName').value;
+            const toolDescription = document.getElementById('toolDescription').value;
+            alert('Ferramenta cadastrada: ' + toolName + '\nDescrição: ' + toolDescription);
+        });
+    </script>
+</body>
+</html>
