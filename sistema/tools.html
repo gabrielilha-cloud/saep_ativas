@@ -75,6 +75,27 @@
         .tool-section button:active {
             background-color: #cc9900;
         }
+        .history-button {
+            display: block;
+            margin: 2rem auto;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: #ffcc00;
+            color: #1e1e2f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .history-button:hover {
+            background-color: #e6b800;
+        }
+        .history-button:active {
+            background-color: #cc9900;
+        }
     </style>
 </head>
 <body>
@@ -97,6 +118,7 @@
                 <button type="submit">Cadastrar</button>
             </form>
         </div>
+        <a href="historico.html" class="history-button">Ver Histórico</a>
     </div>
     <script>
         document.getElementById('searchForm').addEventListener('submit', function(event) {

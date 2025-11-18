@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Ferramentas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #FFD700;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            margin: 0;
+            color: #000;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        header p {
+            margin: 5px 0 0;
+            color: #333;
+            font-size: 1em;
+        }
+        main {
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #333;
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #FFD700;
+            border-radius: 10px;
+            color: #FFD700;
+            font-size: 1.1em;
+        }
+        li:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Histórico de Ferramentas</h1>
+        <p>Acompanhe as ferramentas utilizadas recentemente</p>
+    </header>
+    <main>
+        <ul id="historico-lista">
+            <li>Chave de Fenda</li>
+            <li>Martelo</li>
+            <li>Alicate</li>
+            <li>Serra Elétrica</li>
+            <li>Furadeira</li>
+        </ul>
+    </main>
+
+    <script>
+        // Recupera o histórico de ferramentas do localStorage
+        const historico = JSON.parse(localStorage.getItem('historicoFerramentas')) || [];
+
+        // Seleciona o elemento da lista
+        const lista = document.getElementById('historico-lista');
+
+        // Adiciona cada ferramenta ao histórico
+        historico.forEach(ferramenta => {
+            const item = document.createElement('li');
+            item.textContent = ferramenta;
+            lista.appendChild(item);
+        });
+    </script>
+</body>
+</html>
